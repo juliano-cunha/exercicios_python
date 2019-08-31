@@ -1,4 +1,7 @@
 # 9.4 pág 254
+# 9.6 pág 264 - modificações no exercicio
+
+
 class Restaurant():
     """Criando classe restaurante"""
 
@@ -25,6 +28,21 @@ class Restaurant():
         """soma o valor de clientes atendidos"""
         self.number_served += add_atendido
 
+# 9.6
+
+
+class IceCreamStand(Restaurant):
+    """Criada classe da sorveteria,herdando os atributos da classe Restaurant"""
+
+    def __init__(self, restaurant_name, cuisine_type):
+        """inicializa atributos da classe pai"""
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = ['chocolate', 'baunilha', 'menta', 'morango' ]
+
+    def get_flavors(self):
+        """metódo para receber a lista de sabores"""
+        print("Estes são os sabores de sorvete: " + str(self.flavors) + " \ndisponiveis hoje")
+
 
 # criada instancia
 restaurant = Restaurant('croasonho', 'croassaint')
@@ -46,5 +64,8 @@ print("Valor atualizado com o metódo: " + str(restaurant.number_served))
 restaurant.increment_number_served(20)
 print("Valor atualizado com o metódo: " + str(restaurant.number_served))
 
+# criada instancia da IceCreamStand(sorveteria)
+my_ice_cream = IceCreamStand('sorvelandia', 'sorveteria')
+my_ice_cream.get_flavors()
 
 
