@@ -1,6 +1,5 @@
-# 9.3 pág 248
-# 9.5 pág 254 (retomada do exercicio)
-# 9.7 pág 264 (retomada exercicio)
+# 9.8 pág 264
+
 class User():
     """Cria classe de usuário"""
 
@@ -40,11 +39,20 @@ class Admin(User):
     def __init__(self, first_name, last_name, telefone, email):
         """inicializa os atributo da classe pao"""
         super().__init__(first_name, last_name, telefone, email)
+
+
+class Privileges(Admin):
+    """subaclasse de Admin"""
+
+    def __init__(self, first_name, last_name, telefone, email):
+        """inicializa os atributos da classe pai"""
+        super().__init__(first_name, last_name, telefone, email)
         self.privileges = ['can add post', 'can delete post', 'can ban user']
 
     def show_privileges(self):
         """msotra os privilegios"""
         print("Estes são os privilégios de administrador: " + str(self.privileges))
+
 
 # Maiusculo é referente a classe
 # Criada as instancias de teste
@@ -73,5 +81,5 @@ user_1.reset_login_attempts()
 print("Número de tentativas de login resetado : " + str(user_1.login_attempts) + ".")
 
 # chamada de metódo para mostrar os privilegios do administrador
-administrador = Admin('juliano admin', 'cunha', '3211-2293', 'julianocunhatrabalho@gmail.com')
+administrador = Privileges('juliano admin', 'cunha', '3211-2293', 'julianocunhatrabalho@gmail.com')
 administrador.show_privileges()
