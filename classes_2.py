@@ -1,6 +1,8 @@
 # 9.3 pág 248
 # 9.5 pág 254 (retomada do exercicio)
 # 9.7 pág 264 (retomada exercicio)
+
+
 class User():
     """Cria classe de usuário"""
 
